@@ -1,0 +1,10 @@
+
+substitutions:
+  _TAG: gcr.io/hosting-38998/carton
+
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [ "build", "--tag", "${_TAG}", "." ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [ "push", "${_TAG}" ]
+
